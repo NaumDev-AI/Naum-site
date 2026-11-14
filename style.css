@@ -1,0 +1,430 @@
+﻿* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background-color: #f2d024; font-family: 'Oswald', sans-serif; color: #111; overflow-x: hidden; min-height: 100vh; scroll-behavior: smooth; }
+
+.grunge-nav { background-color: #000; color: #fff; display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; position: sticky; top: 0; z-index: 100; clip-path: polygon(0 0, 100% 0, 100% 90%, 95% 100%, 90% 85%, 85% 100%, 80% 85%, 75% 100%, 70% 85%, 65% 100%, 60% 85%, 55% 100%, 50% 85%, 45% 100%, 40% 85%, 35% 100%, 30% 85%, 25% 100%, 20% 85%, 15% 100%, 10% 85%, 5% 100%, 0 90%); padding-bottom: 30px; }
+.nav-links { display: flex; gap: 30px; flex-wrap: wrap; }
+.nav-links a { color: #fff; text-decoration: none; font-weight: 700; font-size: 1.1rem; letter-spacing: 1px; text-transform: uppercase; transition: color 0.2s; }
+.nav-links a:hover { color: #f2d024; }
+.lang-switcher { display: flex; gap: 10px; }
+.lang-switcher button { background: #333; color: #fff; border: 1px solid #555; padding: 5px 15px; font-family: 'Oswald', sans-serif; font-weight: 700; cursor: pointer; transition: 0.2s; }
+.lang-switcher button.active, .lang-switcher button:hover { background: #f2d024; color: #000; border-color: #f2d024; }
+
+.hero-section { padding: 60px 40px; position: relative; z-index: 1; }
+.hero-content { max-width: 1100px; margin: 0 auto; display: flex; gap: 60px; align-items: flex-start; }
+.stamp { width: 200px; height: 200px; border: 4px solid #111; border-radius: 50%; display: flex; justify-content: center; align-items: center; position: relative; transform: rotate(-15deg); flex-shrink: 0; margin-top: 20px; }
+.stamp::before { content: ''; position: absolute; width: 180px; height: 180px; border: 2px dashed #111; border-radius: 50%; }
+.stamp-inner { text-align: center; font-family: 'Special Elite', monospace; font-size: 0.9rem; font-weight: bold; line-height: 1.2; }
+.stamp-inner strong { display: block; font-size: 1.6rem; margin: 5px 0; letter-spacing: 2px; }
+.text-block { max-width: 700px; }
+.text-block h1 { font-size: 4.5rem; line-height: 1.1; text-transform: uppercase; margin-bottom: 30px; text-shadow: 2px 2px 0 rgba(0,0,0,0.2); }
+.text-block h2 { font-size: 1.8rem; text-transform: uppercase; margin-bottom: 15px; letter-spacing: 1px; }
+.text-block p { font-family: 'Special Elite', monospace; font-size: 1.1rem; line-height: 1.5; margin-bottom: 30px; text-transform: uppercase; }
+.text-block h3 { font-size: 1.5rem; text-transform: uppercase; margin-bottom: 20px; }
+.buttons { display: flex; gap: 20px; margin-bottom: 30px; flex-wrap: wrap; }
+.btn { background-color: #000; color: #fff; text-decoration: none; padding: 12px 24px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; border: 2px solid #000; transition: all 0.2s ease; box-shadow: 4px 4px 0 rgba(0,0,0,0.3); cursor: pointer; font-size: 1rem; font-family: 'Oswald', sans-serif; display: inline-block; }
+.btn:hover { background-color: transparent; color: #000; transform: translate(2px, 2px); box-shadow: 2px 2px 0 rgba(0,0,0,0.3); }
+.tell-friends { display: flex; align-items: center; gap: 10px; transform: rotate(-5deg); margin-left: 50px; }
+.tell-friends .arrow { font-size: 1.5rem; font-weight: bold; font-family: 'Special Elite', monospace; }
+.tell-friends p { font-family: 'Special Elite', monospace; font-size: 1.2rem; margin-bottom: 0; }
+.splatter { position: absolute; background-color: #000; z-index: -1; }
+.splatter-left { width: 400px; height: 400px; left: -150px; top: 20%; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cpath fill='%23000' d='M40,100 C20,80 10,120 30,140 C10,160 50,180 70,160 C90,190 140,190 150,150 C180,160 190,110 160,100 C180,70 150,30 120,50 C110,20 60,20 70,60 C40,50 50,90 40,100 Z'/%3E%3C/svg%3E"); background-size: contain; background-repeat: no-repeat; }
+.splatter-right { width: 500px; height: 500px; right: -200px; bottom: -100px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cpath fill='%23000' d='M60,120 C40,90 20,130 40,160 C20,180 70,190 90,170 C120,200 160,170 140,140 C180,130 170,80 130,90 C140,50 90,30 80,60 C50,30 30,80 60,120 Z'/%3E%3C/svg%3E"); background-size: contain; background-repeat: no-repeat; }
+.section-dark { background-color: #111; color: #fff; padding: 80px 40px; }
+.section-yellow { background-color: #f2d024; color: #111; padding: 80px 40px; }
+.container { max-width: 1100px; margin: 0 auto; }
+.section-title { font-size: 3rem; text-transform: uppercase; margin-bottom: 40px; text-align: center; text-shadow: 2px 2px 0 rgba(255,255,255,0.1); }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+.card { background-color: #222; padding: 30px; border-left: 4px solid #f2d024; }
+.card h3 { color: #f2d024; font-size: 1.5rem; margin-bottom: 15px; }
+.card p { font-family: 'Special Elite', monospace; line-height: 1.5; color: #ccc; }
+.download-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.download-box { background-color: #fff; padding: 30px; border: 4px solid #000; box-shadow: 8px 8px 0 #000; }
+.download-box h3 { font-size: 1.5rem; margin-bottom: 10px; text-transform: uppercase; }
+.code-block { background-color: #000; color: #0f0; padding: 15px; display: flex; justify-content: space-between; align-items: center; margin: 15px 0; font-family: 'Special Elite', monospace; font-size: 0.9rem; word-break: break-all; border: 2px solid #333; }
+.copy-btn { background-color: #fff; color: #000; border: none; padding: 5px 10px; font-weight: bold; cursor: pointer; margin-left: 10px; font-family: 'Oswald', sans-serif; transition: 0.2s; }
+.copy-btn:hover { background-color: #f2d024; }
+.small-note { font-size: 0.8rem; color: #666; font-family: 'Special Elite', monospace; }
+.faq-list { max-width: 800px; margin: 0 auto; }
+.faq-item { border-bottom: 2px solid #333; padding: 20px 0; }
+.faq-item h3 { font-size: 1.3rem; color: #f2d024; margin-bottom: 10px; }
+.faq-item p { font-family: 'Special Elite', monospace; color: #ccc; line-height: 1.5; }
+footer { background-color: #000; color: #666; text-align: center; padding: 20px; font-family: 'Special Elite', monospace; font-size: 0.9rem; }
+
+@media (max-width: 900px) {
+    .grunge-nav { flex-direction: column; gap: 15px; }
+    .hero-content { flex-direction: column; align-items: center; text-align: center; }
+    .text-block h1 { font-size: 3rem; }
+    .tell-friends { justify-content: center; margin-left: 0; margin-top: 20px; }
+    .download-wrapper { grid-template-columns: 1fr; }
+    .splatter { display: none; }
+    .nav-links { gap: 15px; justify-content: center; }
+    .nav-links a { font-size: 0.9rem; }
+}
+
+/* Анимация для кнопки копирования */
+.copy-btn.copied {
+    background-color: #0f0; /* Ярко-зеленый */
+    color: #000;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px #0f0;
+}
+
+/* Анимация для текста команды */
+.code-block code {
+    transition: color 0.3s ease;
+}
+.code-block code.highlight {
+    color: #fff;
+    text-shadow: 0 0 8px #0f0;
+    animation: pulse 0.5s ease;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* --- Анимация для кнопок навигации --- */
+.smooth-scroll {
+    scroll-behavior: smooth;
+}
+
+.nav-links a {
+    position: relative;
+    display: inline-block;
+    padding: 5px 0;
+    overflow: hidden; /* Чтобы блик не вылезал за пределы */
+}
+
+/* Эффект "проявления" при наведении */
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #f2d024;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-links a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Эффект "вдавливания" при клике */
+.nav-links a:active {
+    transform: scale(0.95);
+    color: #f2d024;
+}
+
+/* Эффект гранж-штампа (быстрый блик) при наведении */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(242, 208, 36, 0.4), transparent);
+    transition: left 0.5s ease;
+}
+
+.nav-links a:hover::after {
+    left: 100%;
+}
+
+/* Чтобы активная секция подсвечивалась (опционально, через JS можно добавить, 
+   но пока просто сделаем красивое наведение) */
+
+/* --- Анимация для кнопок переключения языка (RU / EN) --- */
+.lang-switcher button {
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #555;
+    background: #222;
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 6px 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    letter-spacing: 1px;
+    outline: none;
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Эффект при наведении */
+.lang-switcher button:hover {
+    border-color: #f2d024;
+    color: #f2d024;
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0 rgba(242, 208, 36, 0.4);
+}
+
+/* Эффект при клике (вдавливание) */
+.lang-switcher button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Гранж-блик (пробегающий свет) */
+.lang-switcher button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.4s ease;
+}
+
+.lang-switcher button:hover::after {
+    left: 100%;
+}
+
+/* Активное состояние (выбранный язык) */
+.lang-switcher button.active {
+    background-color: #f2d024;
+    color: #000;
+    border-color: #f2d024;
+    box-shadow: 0 0 10px rgba(242, 208, 36, 0.5);
+}
+
+.lang-switcher button.active:hover {
+    transform: none;
+    box-shadow: 0 0 10px rgba(242, 208, 36, 0.5);
+    color: #000;
+}
+
+/* Иконка сайта в шапке */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #f2d024;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-right: 20px;
+}
+
+.nav-logo img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(242, 208, 36, 0.5);
+}
+
+/* --- Мелкие детали и текстуры --- */
+.noise-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    filter: url(#noise-filter);
+    opacity: 0.6;
+}
+
+/* Декоративные крестики */
+.cross-decor {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    opacity: 0.3;
+}
+.cross-decor::before, .cross-decor::after {
+    content: '';
+    position: absolute;
+    background-color: currentColor;
+}
+.cross-decor::before { top: 9px; left: 0; width: 20px; height: 2px; }
+.cross-decor::after { top: 0; left: 9px; width: 2px; height: 20px; }
+
+.cross-1 { top: 20px; right: 50px; color: #f2d024; transform: rotate(15deg); }
+.cross-2 { bottom: 40px; left: 100px; color: #f2d024; transform: rotate(45deg) scale(1.5); }
+.cross-3 { top: 50px; left: 30px; color: #000; transform: rotate(-20deg); }
+
+/* Штампы */
+.stamp-decor {
+    position: absolute;
+    border: 3px solid currentColor;
+    border-radius: 50%;
+    padding: 20px;
+    font-family: 'Special Elite', monospace;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    opacity: 0.15;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(-15deg);
+}
+.stamp-decor::before {
+    content: '';
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    border: 1px dashed currentColor;
+    border-radius: 50%;
+}
+
+.stamp-1 { top: 50px; right: 30px; color: #f2d024; width: 120px; height: 120px; }
+.stamp-2 { bottom: 80px; left: 20px; color: #f2d024; width: 100px; height: 100px; transform: rotate(10deg); }
+.stamp-3 { top: 40px; right: 40px; color: #000; width: 110px; height: 110px; transform: rotate(25deg); }
+
+/* Карточки под наклоном (в How it works) */
+.card {
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:nth-child(1) { transform: rotate(-1deg); }
+.card:nth-child(2) { transform: rotate(1.5deg); }
+.card:nth-child(3) { transform: rotate(-0.5deg); }
+.card:hover {
+    transform: rotate(0deg) translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+/* Печатная машинка */
+.typewriter {
+    font-family: 'Special Elite', monospace;
+    color: #0f0; 
+    display: inline-block;
+    min-height: 1.2em; /* Чтобы блок не прыгал пока пустой */
+}
+.cursor {
+    display: inline-block;
+    width: 8px;
+    height: 15px;
+    background-color: #0f0;
+    margin-left: 2px;
+    animation: blink 1s step-end infinite;
+    vertical-align: middle;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Дрожание текста при наведении (для заголовков) */
+.text-block h1:hover {
+    animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    20% { transform: translate(-1px, -2px) rotate(-1deg); }
+    40% { transform: translate(-3px, 0px) rotate(1deg); }
+    60% { transform: translate(3px, 2px) rotate(0deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+/* Подсветка кода */
+.code-block {
+    position: relative;
+    background-color: #000;
+    border: 2px solid #333;
+}
+
+/* Ховер-эффект для ссылок в футере (если они будут) */
+footer p {
+    transition: color 0.3s;
+}
+footer p:hover {
+    color: #f2d024;
+}
+
+/* --- ФОНОВЫЕ МЕЛКИЕ ДЕТАЛИ --- */
+.bg-details {
+    position: fixed; /* Фиксируем, чтобы фон не уезжал при скролле */
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none; /* Чтобы не мешали кликать по кнопкам */
+    z-index: -1;
+    overflow: hidden;
+    opacity: 0.15; /* Прозрачность, чтобы не мешало читать текст */
+}
+
+/* Мелкие кляксы (используем SVG) */
+.bg-splatter {
+    position: absolute;
+    background-color: #000;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Клякса 1 (верхний левый угол) */
+.s-1 {
+    width: 300px; height: 300px;
+    top: -50px; left: -50px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='5'/%3E%3Ccircle cx='120' cy='90' r='8'/%3E%3Ccircle cx='80' cy='110' r='12'/%3E%3Ccircle cx='140' cy='120' r='3'/%3E%3Ccircle cx='60' cy='80' r='4'/%3E%3Ccircle cx='150' cy='80' r='6'/%3E%3Cpath d='M90,90 Q110,70 130,100 T90,120 Z'/%3E%3C/svg%3E");
+    transform: rotate(15deg);
+}
+
+/* Клякса 2 (правый край) */
+.s-2 {
+    width: 400px; height: 400px;
+    top: 30%; right: -100px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='50' cy='50' r='10'/%3E%3Ccircle cx='80' cy='40' r='4'/%3E%3Ccircle cx='30' cy='80' r='6'/%3E%3Ccircle cx='60' cy='90' r='15'/%3E%3Ccircle cx='100' cy='70' r='3'/%3E%3Ccircle cx='120' cy='100' r='5'/%3E%3Ccircle cx='40' cy='120' r='8'/%3E%3Ccircle cx='90' cy='130' r='4'/%3E%3Ccircle cx='140' cy='50' r='2'/%3E%3C/svg%3E");
+}
+
+/* Клякса 3 (низ) */
+.s-3 {
+    width: 350px; height: 350px;
+    bottom: -100px; left: 20%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='20'/%3E%3Ccircle cx='130' cy='80' r='5'/%3E%3Ccircle cx='70' cy='120' r='8'/%3E%3Ccircle cx='150' cy='110' r='4'/%3E%3Ccircle cx='50' cy='90' r='6'/%3E%3Ccircle cx='90' cy='140' r='3'/%3E%3Ccircle cx='110' cy='60' r='2'/%3E%3C/svg%3E");
+    transform: rotate(-10deg);
+}
+
+/* Клякса 4 (средний левый) */
+.s-4 {
+    width: 200px; height: 200px;
+    top: 60%; left: -50px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='50' cy='50' r='3'/%3E%3Ccircle cx='70' cy='60' r='8'/%3E%3Ccircle cx='40' cy='80' r='5'/%3E%3Ccircle cx='80' cy='90' r='12'/%3E%3Ccircle cx='110' cy='70' r='4'/%3E%3Ccircle cx='60' cy='120' r='6'/%3E%3C/svg%3E");
+}
+
+/* Мелкие точки (как пыль или брызги) */
+.bg-dots {
+    position: absolute;
+    width: 100%; height: 100%;
+    background-image: radial-gradient(circle, #000 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.3;
+}
+
+/* Легкая сетка (как на миллиметровке) */
+.bg-grid {
+    position: absolute;
+    width: 100%; height: 100%;
+    background-image: 
+        linear-gradient(to right, #000 1px, transparent 1px),
+        linear-gradient(to bottom, #000 1px, transparent 1px);
+    background-size: 80px 80px;
+    opacity: 0.05;
+}
+
+/* Анимация легкого движения для клякс (чтобы фон "дышал") */
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.s-1 { animation: float 8s ease-in-out infinite; }
+.s-2 { animation: float 10s ease-in-out infinite reverse; }
+.s-3 { animation: float 12s ease-in-out infinite; }
+.s-4 { animation: float 9s ease-in-out infinite reverse; }

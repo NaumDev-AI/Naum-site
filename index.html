@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru" class="smooth-scroll">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg"><title>Naum Subtext - Local Language AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Шум (зерно) на весь сайт -->
+    <svg style="display: none;">
+        <filter id="noise-filter">
+            <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0, 0 0 0 0 0, 0 0 0 0 0, 0 0 0 0.05 0"/>
+        </filter>
+    </svg>
+    <div class="noise-overlay"></div>
+    <!-- Фоновые мелкие детали -->
+    <div class="bg-details">
+        <div class="bg-splatter s-1"></div>
+        <div class="bg-splatter s-2"></div>
+        <div class="bg-splatter s-3"></div>
+        <div class="bg-splatter s-4"></div>
+        <div class="bg-dots"></div>
+        <div class="bg-grid"></div>
+    </div>
+
+    <nav class="grunge-nav">
+        <div class="nav-logo"><img src="favicon.svg" alt="Naum Logo"> NAUM</div><div class="nav-links">
+            <a href="#home" data-lang-key="nav_home">HOME</a>
+            <a href="#how-it-works" data-lang-key="nav_how">HOW IT WORKS</a>
+            <a href="#download" data-lang-key="nav_download">DOWNLOAD</a>
+            <a href="#faq" data-lang-key="nav_faq">FAQ</a>
+        </div>
+        <div class="lang-switcher">
+            <button onclick="setLanguage('ru')" id="btn-ru">RU</button>
+            <button onclick="setLanguage('en')" id="btn-en">EN</button>
+        </div>
+    </nav>
+
+    <main id="home" class="hero-section">
+        <div class="splatter splatter-left"></div>
+        <div class="splatter splatter-right"></div>
+
+        <div class="hero-content">
+            <div class="stamp">
+                <div class="stamp-inner">
+                    <span data-lang-key="stamp_local">100% LOCAL</span>
+                    <strong>NAUM</strong>
+                    <span data-lang-key="stamp_cloud">NO CLOUD</span>
+                </div>
+            </div>
+
+            <div class="text-block">
+                <h1 data-lang-key="hero_title">LOCAL AI MADE<br>SIMPLE, CONVENIENT</h1>
+                
+                <h2 data-lang-key="hero_hey">HEY YOU!</h2>
+                <p data-lang-key="hero_desc">
+                    DO YOU WANT TO CHECK TEXT WITHOUT SENDING IT TO THE CLOUD? 
+                    IT'S JUST TOO DARN EXPENSIVE TO PAY FOR TOKENS. 
+                    YOU ARE SICK OF BUYING SUBSCRIPTIONS, TRYING TO REMEMBER PASSWORDS, 
+                    AND COUNTING THE CENTS PER MINUTE? FORGET ALL THAT!
+                </p>
+                
+                <h3 data-lang-key="hero_start">START USING NAUM SUBTEXT</h3>
+                
+                <div class="buttons">
+                    <a href="#how-it-works" class="btn" data-lang-key="btn_how">SEE HOW IT WORKS</a>
+                    <a href="#download" class="btn" data-lang-key="btn_download">DOWNLOAD NOW</a>
+                </div>
+
+                <div class="tell-friends">
+                    <span class="arrow">-></span>
+                    <p data-lang-key="tell_friends">tell your friends</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section id="how-it-works" class="section-dark">
+    <div class="stamp-decor stamp-1">APPROVED</div>
+    <div class="stamp-decor stamp-2">LOCAL</div>
+    <div class="cross-decor cross-1"></div>
+    <div class="cross-decor cross-2"></div>
+        <div class="container">
+            <h2 class="section-title" data-lang-key="how_title">HOW IT WORKS</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <h3 data-lang-key="how_1_title">1. INSTALL</h3>
+                    <p data-lang-key="how_1_desc">Run a single PowerShell command. Everything downloads and installs locally on your drive.</p>
+                </div>
+                <div class="card">
+                    <h3 data-lang-key="how_2_title">2. CHECK</h3>
+                    <p data-lang-key="how_2_desc">Use the terminal to check language and grammar. 70+ languages supported out of the box.</p>
+                </div>
+                <div class="card">
+                    <h3 data-lang-key="how_3_title">3. NO CLOUD</h3>
+                    <p data-lang-key="how_3_desc">Your text never leaves your computer. No API keys, no subscriptions, no limits.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="section-yellow">
+    <div class="stamp-decor stamp-3">VERIFIED</div>
+    <div class="cross-decor cross-3"></div>
+        <div class="container">
+            <h2 class="section-title" data-lang-key="dl_title">DOWNLOAD</h2>
+            
+            <div class="download-wrapper">
+                <div class="download-box">
+                    <h3 data-lang-key="dl_ps_title">POWERSHELL COMMAND</h3>
+                    <p data-lang-key="dl_ps_desc">Open PowerShell as Administrator and paste this:</p>
+                    <div class="code-block">
+                        <code id="ps-command" class="typewriter"></code>
+                        <button class="copy-btn" onclick="copyToClipboard('irm https://naum.ai/install.ps1 | iex', this)" data-lang-key="btn_copy">COPY</button>
+                    </div>
+                    <p class="small-note" data-lang-key="dl_ps_note">* Requires Windows 10/11. Min: 8GB RAM (Comfort: 16GB)</p>
+                </div>
+
+                <div class="download-box">
+                    <h3 data-lang-key="dl_zip_title">MANUAL DOWNLOAD</h3>
+                    <p data-lang-key="dl_zip_desc">Download the ZIP archive and extract it to drive Q:</p>
+                    <a href="#" class="btn" style="display:inline-block; margin-top:20px;" onclick="alert('Download link will be here soon!')" data-lang-key="btn_zip">DOWNLOAD ZIP (4.6 GB)</a>
+                    <p class="small-note" data-lang-key="dl_zip_note">* Extract to any folder and run install.bat</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section-dark">
+        <div class="container">
+            <h2 class="section-title" data-lang-key="faq_title">FAQ</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3 data-lang-key="faq_1_q">Is this really free?</h3>
+                    <p data-lang-key="faq_1_a">Yes. Naum runs locally on your hardware. You don't pay for tokens or API calls.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 data-lang-key="faq_2_q">Does it work offline?</h3>
+                    <p data-lang-key="faq_2_a">Yes, once installed, no internet connection is required.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 data-lang-key="faq_3_q">Can it detect 'OK'?</h3>
+                    <p data-lang-key="faq_3_a">No, 'OK' is an international word without a specific language. Naum needs at least 2 words to determine the language accurately.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p data-lang-key="footer">&copy; 2026 NAUM SUBTEXT. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
